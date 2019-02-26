@@ -8,7 +8,7 @@ Author: iZZY
 
 defined( 'ABSPATH' ) || die();
 
-add_role( 'student', __( 'Student' ),
+add_role( 'student', __( 'student' ),
         array(
             'read' => true,
             'list_users' => false,
@@ -50,7 +50,7 @@ add_role( 'student', __( 'Student' ),
         )
     );
 
-add_role( 'beheerder', __( 'Principal' ),  //Administrator
+add_role( 'principal', __( 'principal' ),  //Administrator
         array(
             'read' => true,
             'list_users' => true,
@@ -93,7 +93,7 @@ add_role( 'beheerder', __( 'Principal' ),  //Administrator
     );
 
 
-    add_role( 'leerkracht', __( 'Teacher' ), //Teacher
+    add_role( 'teacher', __( 'teacher' ), //Teacher
             array(
                 'read' => true,
                 'list_users' => true,
@@ -137,7 +137,7 @@ add_role( 'beheerder', __( 'Principal' ),  //Administrator
 
 
         add_role(
-                'intern_begeleider', __( 'Superintendent' ),
+                'superintendent', __( 'superintendent' ),
                 array(
                     'read' => true,
                     'list_users' => true,
@@ -181,9 +181,9 @@ add_role( 'beheerder', __( 'Principal' ),  //Administrator
 
             function izzy_school_role_deactivation() {
               remove_role( 'student' );
-              remove_role( 'Principal' );
-              remove_role( 'Teacher' );
-              remove_role( 'Superintendent' );
+              remove_role( 'principal' );
+              remove_role( 'teacher' );
+              remove_role( 'superintendent' );
               }
 
             register_deactivation_hook( __FILE__, 'izzy_school_role_deactivation' );
